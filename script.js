@@ -1,5 +1,21 @@
-const todoList = []; // Empty array
+const todoList = ["Gabriel","Batata"]; // Empty array
 
+renderTodoList();
+
+function renderTodoList() {
+    let todoListHTML = "";
+
+    for (let i = 0;i<todoList.length;i++) {
+        const todo = todoList[i];
+        const html = `<p>${todo} <button onclick="">Remove</button></p> `;
+        todoListHTML += html;
+    }
+
+    console.log(todoListHTML)
+
+    document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+
+}
 
 function addTodo() {
     const inputElement = document.querySelector(".js-todo-input");
@@ -9,4 +25,5 @@ function addTodo() {
     console.log(todoList);
 
     inputElement.value = ""; // Resetar texto do text box
+    renderTodoList();
 }
