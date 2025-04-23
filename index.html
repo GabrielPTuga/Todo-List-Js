@@ -11,13 +11,16 @@
         <h3>Todo List Practice</h3>
     </p>
     <p>
-        <input type="text" placeholder="Todo Name" class="js-todo-input todo-box">
-        <button onclick="
-            addTodo()
-        ">Add</button>
+        <div class="todo-input-grid">
+            <input type="text" placeholder="Todo Name" class="js-todo-input box">
+            <input type="date" class="box js-box box2">
+            <button class="add-button" onclick="
+                addTodo()
+            ">Add</button>
+        </div>
     </p>
 
-    <div class="js-todo-list"></div>
+    <div class="js-todo-list todo-grid"></div>
 
 
     <script src="script.js"></script>
