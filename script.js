@@ -31,6 +31,9 @@ function renderTodoList() {
             renderTodoList();
         });
     })
+
+    // Quando o forEach é executado o "index" deixa de exixstir
+    // Ou seja não é possivel aceder os index por console.log(index)
 }
 
 function addTodo() {
