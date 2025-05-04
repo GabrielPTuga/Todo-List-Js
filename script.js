@@ -27,6 +27,7 @@ function renderTodoList() {
     //console.log(document.querySelectorAll(".js-remove"))
     document.querySelectorAll(".js-remove").forEach((deleteButton, index) => {
         deleteButton.addEventListener("click",() => {
+            console.log(index);
             todoList.splice(index,1);
             renderTodoList();
         });
