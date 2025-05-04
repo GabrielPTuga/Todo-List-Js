@@ -16,17 +16,21 @@ function renderTodoList() {
         // const name = todoObj.name;
         //const doDate = todoObj.doDate;
         const {name, doDate} = todoObj
-        const html = `<div>${name}</div> <div>${doDate}</div> <button onclick="
-            todoList.splice(${i},1);
-            renderTodoList();
-        " class="remove-button js-remove">Remove</button> `;
+        const html = `<div>${name}</div> <div>${doDate}</div> <button class="remove-button js-remove">Remove</button> `;
         todoListHTML += html;
     }
 
-    console.log(todoListHTML)
+    console.log(todoListHTML);
 
     document.querySelector(".js-todo-list").innerHTML = todoListHTML;
 
+    //console.log(document.querySelectorAll(".js-remove"))
+    document.querySelectorAll(".js-remove").forEach((deleteButton, index) => {
+        deleteButton.addEventListener("click",() => {
+            todoList.splice(index,1);
+            renderTodoList();
+        });
+    })
 }
 
 function addTodo() {
